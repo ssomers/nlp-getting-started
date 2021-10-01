@@ -327,7 +327,7 @@ def main():
               val_y=val_y)
     if submit:
         y = model.predict(test_x)
-        submission = test_df[["id"]].assign(prediction=y_pred_to_label(y))
+        submission = test_df[["id"]].assign(target=y_pred_to_label(y))
         submission.to_csv("submission.csv", index=False)
 
 
